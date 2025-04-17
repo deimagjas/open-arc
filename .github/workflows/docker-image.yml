@@ -16,3 +16,8 @@ jobs:
     - uses: actions/checkout@v4
     - name: Build the Docker image
       run: docker build . --file ./deployment/Dockerfile --tag arc:$(date +%s)
+    - shell: bash
+      env:
+        SUPER_SECRET: ${{ secrets.SECRET }}
+      run: |
+        echo "$SUPER_SECRET"
