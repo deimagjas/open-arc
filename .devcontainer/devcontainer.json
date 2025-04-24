@@ -26,15 +26,11 @@
 
   "features": {
     "ghcr.io/devcontainers/features/git": {},
-    "ghcr.io/devcontainers/features/common-utils": {},
-    "ghcr.io/devcontainers/features/node": {
-      "version": "20"
-    },
-    "ghcr.io/devcontainers-contrib/features/sdkman": {
-      "version": "latest",
-      "install": [
-        "java 21-tem"
-      ]
+    "ghcr.io/devcontainers/features/common-utils": {},    
+    "ghcr.io/devcontainers/features/java:1": {    
+      "version": "21",
+      "jdkDistro": "amzn",
+      "gradleVersion": "latest"
     }
   },
 
