@@ -1,28 +1,25 @@
-// DevContainer compatible con VS Code, GitHub Codespaces e IntelliJ
 {
   "name": "Ubuntu DevContainer",
   "image": "ubuntu:24.04",
 
   "customizations": {
-    // Configuración específica para JetBrains Gateway
     "jetbrains": {
       "backend": "IntelliJ",
       "settings": {
-        // Puedes agregar configuraciones específicas de IntelliJ aquí
+        // Configuración específica de IntelliJ aquí
       },
       "plugins": [
-        // Lista de IDs de plugins de JetBrains
+        // Plugin IDs de JetBrains aquí
       ]
     },
-    // Configuración específica para VS Code y GitHub Codespaces
     "vscode": {
       "settings": {
         "terminal.integrated.defaultProfile.linux": "bash"
       },
       "extensions": [
         "ms-vscode.cpptools",
-        "esbenp.prettier-vscode"
-        // Agrega aquí cualquier otra extensión que necesites
+        "esbenp.prettier-vscode",
+        "vscjava.vscode-java-pack"
       ]
     }
   },
@@ -32,20 +29,18 @@
     "ghcr.io/devcontainers/features/common-utils": {},
     "ghcr.io/devcontainers/features/node": {
       "version": "20"
+    },
+    "ghcr.io/devcontainers-contrib/features/sdkman": {
+      "version": "latest",
+      "install": [
+        "java 21-tem"
+      ]
     }
   },
 
-  // Usuario no root para mayor compatibilidad
   "remoteUser": "ubuntu",
 
-  // Opcional: Forward de puertos (útil para Codespaces)
   "forwardPorts": [3000, 8000],
 
-  // Opcional: mounts y configuración adicional
-  "mounts": [
-    "source=${localWorkspaceFolder}/.bashrc,target=/home/ubuntu/.bashrc,type=bind,consistency=cached"
-  ],
-
-  // Opcional: configuración postCreateCommand para instalar dependencias
-  "postCreateCommand": "sudo apt update && sudo apt install -y curl"
+  "postCreateCommand": "sdk version"
 }
