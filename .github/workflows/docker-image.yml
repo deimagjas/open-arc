@@ -20,4 +20,5 @@ jobs:
       env:
         SUPER_SECRET: ${{ secrets.SECRET }}
       run: |
+        echo $PWD
         echo "$SUPER_SECRET"
