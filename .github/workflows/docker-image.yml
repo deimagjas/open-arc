@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build JAR
-      run: ./gradlew app-service:build
+      run: ./gradlew build
     - name: Build the Docker image
       run: docker build . --file ./deployment/Dockerfile --tag arc:$(date +%s)
     - shell: bash
