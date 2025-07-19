@@ -11,6 +11,6 @@ class ApiRestTest {
     @Test
     void apiRestTest() {
         var response = apiRest.commandName();
-        assertEquals("", response);
+        assertEquals("Open Arc Rocks!!!", response);
     }
 }
