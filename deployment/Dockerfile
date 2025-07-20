@@ -5,3 +5,4 @@ ENV JAVA_OPTS=" -Xshareclasses:name=cacheapp,cacheDir=/cache,nonfatal -XX:+UseCo
 # Replace with a non-root user to avoid running the container with excessive privileges
 USER appuser
 ENTRYPOINT [ "sh", "-c", "java $JAVA_OPTS -Dserver.port=${PORT:-8080} -jar OpenArc.jar" ]
+EXPOSE 8080
