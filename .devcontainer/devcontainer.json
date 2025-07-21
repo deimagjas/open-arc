@@ -1,6 +1,6 @@
 {
   "name": "Ubuntu DevContainer",
-  "image": "ubuntu:24.04-minimal",
+  "image": "ubuntu:24.04",
 
   "customizations": {
     "jetbrains": {
