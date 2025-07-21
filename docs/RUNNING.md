@@ -6,7 +6,7 @@ Asegúrate de estar en el devcontainer y que Docker esté disponible (Docker-in-
 
 ```bash
 cd /workspaces/open-arc
-docker build -t openarc-app deployment/
+docker build -t openarc-app -f deployment/Dockerfile .
 docker run -p 8080:8080 openarc-app
 ```
 
