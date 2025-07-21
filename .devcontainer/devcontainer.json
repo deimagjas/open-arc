@@ -1,6 +1,6 @@
 {
   "name": "Ubuntu DevContainer",
-  "image": "ubuntu:24.04",
+  "image": "ubuntu:24.04-minimal",
 
   "customizations": {
     "jetbrains": {
@@ -26,17 +26,18 @@
 
   "features": {
     "ghcr.io/devcontainers/features/git": {},
-    "ghcr.io/devcontainers/features/common-utils": {},    
-    "ghcr.io/devcontainers/features/java:1": {    
+    "ghcr.io/devcontainers/features/common-utils": {},
+    "ghcr.io/devcontainers/features/java:1": {
       "version": "21",
       "jdkDistro": "amzn",
       "gradleVersion": "latest"
-    }
+    },
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
   },
 
   "remoteUser": "ubuntu",
 
-  "forwardPorts": [3000, 8000],
+  "forwardPorts": [3000, 8000, 8080],
 
   "postCreateCommand": "sdk version"
 }
