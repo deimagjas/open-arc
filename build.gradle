@@ -1,12 +1,12 @@
 // ...existing code...
 buildscript {
     ext {
-        cleanArchitectureVersion = '3.23.2'
+        cleanArchitectureVersion = '3.28.0'
         springBootVersion = '3.4.4'
         sonarVersion = '6.1.0.5360'
         jacocoVersion = '0.8.13'
         pitestVersion = '1.15.0'
-        lombokVersion = '1.18.38'
+        lombokVersion = '1.18.42'
     }
 }
 
@@ -16,6 +16,7 @@ plugins {
     id 'info.solidsoft.pitest' version "${pitestVersion}" apply false
     id 'org.sonarqube' version "${sonarVersion}"
     id 'jacoco'
+    id "com.github.ben-manes.versions" version "0.51.0"
 }
 
 sonar {
